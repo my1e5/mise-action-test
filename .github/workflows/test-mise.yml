@@ -14,12 +14,10 @@ jobs:
       contents: read
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Setup mise
-        uses: jdx/mise-action@v2
-        with:
-          experimental: true
+      - name: Set up mise
+        uses: jdx/mise-action@v3
 
       - name: Run verification task
         shell: bash
