@@ -4,16 +4,13 @@
 [tasks.verify]
 description = "Verify winlibs_mingw installation"
 run = """
-if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ] || [ -n "$WINDIR" ]; then
-  echo "Running on Windows"
-  if command -v gcc &> /dev/null; then
-    echo "GCC is installed successfully!"
-    gcc --version
-  else
-    echo "ERROR: GCC not found in PATH"
-    exit 1
-  fi
+echo "Verifying winlibs_mingw installation..."
+if command -v gcc &> /dev/null; then
+  echo "✓ GCC is installed successfully!"
+  gcc --version
+  exit 0
 else
-  echo "Not running on Windows, skipping verification"
+  echo "✗ ERROR: GCC not found in PATH"
+  exit 1
 fi
 """
