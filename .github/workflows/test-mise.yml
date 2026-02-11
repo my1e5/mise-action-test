@@ -18,6 +18,8 @@ jobs:
 
       - name: Set up mise
         uses: jdx/mise-action@v3
+        with:
+          reshim: true
 
       - name: Run verification task
         shell: bash
