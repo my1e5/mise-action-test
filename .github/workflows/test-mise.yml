@@ -1,0 +1,24 @@
+name: Test Mise on Windows
+
+on:
+  push:
+    branches: [ main, master, copilot/** ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  test-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup mise
+        uses: jdx/mise-action@v2
+        with:
+          experimental: true
+
+      - name: Run verification task
+        shell: bash
+        run: mise run verify
