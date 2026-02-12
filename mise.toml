@@ -6,7 +6,7 @@ description = "Verify winlibs_mingw installation"
 run = """
 echo "Verifying winlibs_mingw installation..."
 if command -v gcc &> /dev/null; then
-  echo "✓ GCC is installed successfully!"
+  echo "✓ GCC is installed successfully! "
   gcc --version
   exit 0
 else
