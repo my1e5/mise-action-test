@@ -1,5 +1,6 @@
 [tools]
 "github:brechtsanders/winlibs_mingw" = { version = "latest", os = ["windows"] }
+uv = "latest"
 
 [tasks.verify]
 description = "Verify winlibs_mingw installation"
