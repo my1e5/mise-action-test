@@ -1,0 +1,17 @@
+[tools]
+"github:brechtsanders/winlibs_mingw" = { version = "latest", os = ["windows"] }
+uv = "latest"
+
+[tasks.verify]
+description = "Verify winlibs_mingw installation"
+run = """
+echo "Verifying winlibs_mingw installation..."
+if command -v gcc &> /dev/null; then
+  echo "✓ GCC is installed successfully!"
+  gcc --version
+  exit 0
+else
+  echo "✗ ERROR: GCC not found in PATH"
+  exit 1
+fi
+"""
